@@ -13,6 +13,8 @@ interface Producto {
 })
 export class GlobalService {
   activeRoute = 'home';
+  menuSelected = '';
+
   previaProducto= { } as Producto;
   categorias: any[] = [];
   productos: any[] = [];
@@ -21,6 +23,14 @@ export class GlobalService {
   constructor() { }
   setRoute(route: string) {
     this.activeRoute = route;
+  }
+  setProduct(route: string,product  : Producto) {
+    this.activeRoute = route;
+    this.previaProducto = product;
+
+  }
+  setMenuOption(option: string) {
+    this.menuSelected = option;
   }
   getCategorias(): any[] {
     return this.categorias;

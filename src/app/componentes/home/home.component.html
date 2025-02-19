@@ -21,26 +21,23 @@
                       </div>
                     </div>
                     <div class="content-btn m-b30">
-                      <a  class="btn btn-secondary me-xl-3 me-2 btnhover20">Haz click aquí</a>
+                      <a  class="btn btn-secondary me-xl-3 me-2 btnhover20" (click)="global.setRoute('contact')">Haz click aquí</a>
 <!--                       <a href="product-default.html" class="btn btn-outline-secondary btnhover20">VIEW DETAIL </a>
  -->                    </div>
                   </div>
                 </div>
-                <div class="slick-slide">
+                <!-- <div class="slick-slide">
                   <div class="content-info">
                     <h1 class="title">Productos a credito</h1>
                     <div class="swiper-meta-items">
                       <div class="meta-content">
-                      <!--   <span class="price-name">Price</span>
-                        <span class="price-num d-inline-block">&#036;30.00</span> -->
                       </div>
                     </div>
                     <div class="content-btn m-b30">
                       <a (click)="global.setRoute('shop')" class="btn btn-secondary me-xl-3 me-2 btnhover20">Ver productos</a>
-<!--                       <a href="product-default.html" class="btn btn-outline-secondary btnhover20">VIEW DETAIL </a>
- -->                    </div>
+                    </div>
                   </div>
-                </div>
+                </div> -->
                 <div class="slick-slide">
                   <div class="content-info">
                     <h1 class="title">Alicompras, nos encontramos en </h1>
@@ -99,15 +96,15 @@
                     </div>
                   </div>
                 </div>
-                <div class="slick-slide">
+                <!-- <div class="slick-slide">
                   <div class="banner-media" data-name="CREDITOS">
                     <div class="img-preview">
                       <img src="assets/images/banner/banner-media2.png" alt="banner-media">
                     </div>
                   </div>
-                </div>
-                <div class="slick-slide">
-                  <div class="banner-media" data-name="DONDE ESTAMOS">
+                </div> -->
+                <div class="slick-slide" >
+                  <div class="banner-media" data-name="UBÍCANOS" style="font-size: 12px;">
                     <div class="img-preview">
                       <img src="assets/images/banner/banner-media.png" alt="banner-media">
                     </div>
@@ -120,13 +117,13 @@
                     </div>
                   </div>
                 </div>
-                <div class="slick-slide">
+                <!-- <div class="slick-slide">
                   <div class="banner-media" data-name="PRODUCTOS">
                     <div class="img-preview">
                       <img src="assets/images/banner/banner-media5.png" alt="banner-media">
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -172,70 +169,15 @@
                       </a></h6>
                     </div>
                   </div>
-                 <!--  <div class="swiper-slide">
-                    <div class="shop-box style-1 wow fadeInUp" data-wow-delay="0.4s">
-                      <div class="dz-media">
-                        <img src="assets/images/shop/product/clothes/2.png" alt="image">
-                      </div>
-                      <h6 class="product-name"><a href="shop-with-category.html">Shorts</a></h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="shop-box style-1 wow fadeInUp" data-wow-delay="0.6s">
-                      <div class="dz-media">
-                        <img src="assets/images/shop/product/clothes/3.png" alt="image">
-                      </div>
-                      <h6 class="product-name"><a href="shop-with-category.html">t-Shirt</a></h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="shop-box style-1 wow fadeInUp" data-wow-delay="0.8s">
-                      <div class="dz-media">
-                        <img src="assets/images/shop/product/clothes/4.png" alt="image">
-                      </div>
-                      <h6 class="product-name"><a href="shop-with-category.html">t-Jeans</a></h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="shop-box style-1 wow fadeInUp" data-wow-delay="0.9s">
-                      <div class="dz-media">
-                        <img src="assets/images/shop/product/clothes/5.png" alt="image">
-                      </div>
-                      <h6 class="product-name"><a href="shop-with-category.html">t-Jeans</a></h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="shop-box style-1 wow fadeInUp" data-wow-delay="1.0s">
-                      <div class="dz-media">
-                        <img src="assets/images/shop/product/clothes/2.png" alt="image">
-                      </div>
-                      <h6 class="product-name"><a href="shop-with-category.html">Shorts</a></h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="shop-box style-1 wow fadeInUp" data-wow-delay="1.1s">
-                      <div class="dz-media">
-                        <img src="assets/images/shop/product/clothes/3.png" alt="image">
-                      </div>
-                      <h6 class="product-name"><a href="shop-with-category.html">t-Shirt</a></h6>
-                    </div>
-                  </div> -->
+                  
                 </div>
               </div>
-              <!-- <a class="icon-button" (click)="global.setRoute('shop')">
-                <div class="text-row word-rotate-box c-black border-secondary">
-                  <span class="word-rotate">Nuestros productos </span>
-                  <svg class="badge__emoji" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 35 35" fill="none">
-                    <path d="M32.2645 16.9503H4.08145L10.7508 10.4669C11.2604 9.97176 10.5046 9.1837 9.98813 9.68289C9.98815 9.68286 2.35193 17.1063 2.35193 17.1063C2.12911 17.3092 2.14686 17.6755 2.35196 17.8903C2.35193 17.8903 9.98815 25.3169 9.98815 25.3169C10.5021 25.81 11.2622 25.0367 10.7508 24.5328C10.7508 24.5329 4.07897 18.0441 4.07897 18.0441H32.2645C32.9634 18.0375 32.9994 16.9636 32.2645 16.9503Z" fill="#000"></path>
-                  </svg>
-                </div>
-              </a> -->
             </div>
             <div class="col-lg-4 right-box">
               <div>
                 <h3 class="title wow fadeInUp" data-wow-delay="1.2s">Categorias</h3>
                 <p class="text wow fadeInUp" data-wow-delay="1.4s">Descubre los productos tendencia en Alicompras.</p>
-                <div class="pagination-align wow fadeInUp" data-wow-delay="1.6s">
+                <div class="pagination-align wow fadeInUp" data-wow-delay="1.6s" style="color:white;">
                   <div class="shop-button-prev">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
                       <path d="M32.2645 16.9503H4.08145L10.7508 10.4669C11.2604 9.97176 10.5046 9.1837 9.98813 9.68289C9.98815 9.68286 2.35193 17.1063 2.35193 17.1063C2.12911 17.3092 2.14686 17.6755 2.35196 17.8903C2.35193 17.8903 9.98815 25.3169 9.98815 25.3169C10.5021 25.81 11.2622 25.0367 10.7508 24.5328C10.7508 24.5329 4.07897 18.0441 4.07897 18.0441H32.2645C32.9634 18.0375 32.9994 16.9636 32.2645 16.9503Z" fill="white"/>
@@ -248,14 +190,7 @@
                   </div>
                 </div>
               </div>
-              <!-- <a class="icon-button" (click)="global.setRoute('shop')">
-                <div class="text-row word-rotate-box c-black border-white">
-                  <span class="word-rotate">Nuestros productos</span>
-                  <svg class="badge__emoji" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 35 35" fill="none">
-                    <path d="M32.2645 16.9503H4.08145L10.7508 10.4669C11.2604 9.97176 10.5046 9.1837 9.98813 9.68289C9.98815 9.68286 2.35193 17.1063 2.35193 17.1063C2.12911 17.3092 2.14686 17.6755 2.35196 17.8903C2.35193 17.8903 9.98815 25.3169 9.98815 25.3169C10.5021 25.81 11.2622 25.0367 10.7508 24.5328C10.7508 24.5329 4.07897 18.0441 4.07897 18.0441H32.2645C32.9634 18.0375 32.9994 16.9636 32.2645 16.9503Z" fill="white"></path>
-                  </svg>
-                </div>
-              </a> -->
+              
             </div>
           </div>
         </div>
@@ -271,16 +206,29 @@
                 <div class="dz-media h-100">	
                   <img src="assets/images/women.png" alt="">
                 </div>	
-                <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-light btn-xl">Woman collection</a>	
+                <a (click)="global.setRoute('about')" class="btn btn-outline-secondary btn-light btn-xl">Alicompras - Importaciones</a>	
               </div>
             </div>
             <div class="col-lg-6 col-md-12 align-self-center">
               <div class="about-content">
                 <div class="section-head style-1 wow fadeInUp" data-wow-delay="0.4s">
-                  <h3 class="title ">Set your wardrobe with our  amazing selection!</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-                </div>
-                <a class="service-btn-2 wow fadeInUp" data-wow-delay="0.6s" href="about-us.html" >
+                  <h3 class="title ">¡Bienvenido a Alicompras.com, tu tienda importadora en línea de confianza!</h3>
+                    <p> En Alicompras, nos apasiona ofrecerte una experiencia de compra única: rápida, segura y completamente confiable. Nos hemos comprometido desde nuestros inicios a seleccionar los mejores productos de distintas categorías para ti, garantizando siempre calidad, innovación y precios que se ajustan a tu bolsillo.
+
+                      Explora nuestro extenso catálogo, que incluye lo mejor en belleza y cuidado personal, tecnología de última generación, artículos para el hogar y productos pensados para tu bienestar y entretenimiento. Y lo mejor de todo: ¡envíos rápidos y pago contra entrega disponible en Mérida! Así, podrás disfrutar de tu compra con total tranquilidad y sin complicaciones.
+                      
+                      Tu satisfacción es nuestra prioridad. Nos esforzamos por ofrecerte un servicio excepcional, brindándote asesoría personalizada en cada paso y promociones exclusivas para que consigas lo que necesitas desde la comodidad de tu hogar.
+                      
+                      <p> 
+                        <ul> 
+                          <li>🚚 ¡Envío Gratis en Mérida! Disfruta de tu compra sin costo adicional.</li> 
+                          <li>💳 Amplia variedad de métodos de pago, ¡para tu mayor comodidad!</li> 
+                          <li>🌟 Productos innovadores para todas tus necesidades.</li> 
+                          <li>Alicompras.com – ¡Todo lo que buscas, en un solo clic!</li> 
+                        </ul> 
+                      <p>¡Te invitamos a vivir la mejor experiencia de compra online con nosotros!</p>
+              </div>
+                <a class="service-btn-2 wow fadeInUp" data-wow-delay="0.6s" (click)="global.setRoute('about')">
                   <span class="icon-wrapper">
                     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12.832 31.1663L31.1654 12.833" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -295,7 +243,7 @@
                         <img src="assets/images/shop/product/medium/1.png" alt="image">
                       </div>
                       <div class="dz-content">
-                        <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-light btn-md">Child Fashion</a>
+                        <a (click)="global.setRoute('contact')" class="btn btn-outline-secondary btn-light btn-md">¿Quieres comprar en USA?</a>
                       </div>
                     </div>
                   </div>
@@ -305,9 +253,9 @@
                         <img src="assets/images/shop/product/medium/2.png" alt="image">
                       </div>
                       <div class="dz-content">
-                        <a (click)="global.setRoute('detail-product')" class="btn btn-outline-secondary btn-light btn-md">Man collection</a>
+                        <a (click)="global.setRoute('contact')" class="btn btn-outline-secondary btn-light btn-md">¿Deseas importar desde China?</a>
                       </div>
-                      <span class="sale-badge">50%<br>Sale <img src="assets/images/star.png" alt=""></span>
+                      <span class="sale-badge">- 5%<br>Nuevas alianzas <img src="assets/images/star.png" alt=""></span>
                     </div>
                   </div>
                 </div>
@@ -316,96 +264,7 @@
           </div>
         </div>
       </section>
-      <!-- About Section End -->
-      
-      <!-- Dz Silder Start -->
-      <!-- <section class="content-inner-3 overflow-hidden">
-        <div class="dz-features-wrapper overflow-hidden">
-          <ul class="dz-features text-wrapper">
-            <li class="item">
-              <h2 class="title">Jacket</h2>
-            </li>	
-            <li class="item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
-              <path opacity="0.3" d="M29.302 -0.00499268L38.533 21.2005L60.3307 28.9297L39.1253 38.1607L31.396 59.9585L22.165 38.753L0.367297 31.0237L21.5728 21.7928L29.302 -0.00499268Z" fill="black"/>
-              </svg>
-            </li>
-            <li class="item">
-              <h2 class="title">Jeans</h2>
-            </li>	
-            <li class="item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
-              <path opacity="0.3" d="M29.302 -0.00499268L38.533 21.2005L60.3307 28.9297L39.1253 38.1607L31.396 59.9585L22.165 38.753L0.367297 31.0237L21.5728 21.7928L29.302 -0.00499268Z" fill="black"/>
-              </svg>
-            </li>
-            <li class="item">
-              <h2 class="title">Shirts</h2>
-            </li>	
-            <li class="item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
-              <path opacity="0.3" d="M29.302 -0.00499268L38.533 21.2005L60.3307 28.9297L39.1253 38.1607L31.396 59.9585L22.165 38.753L0.367297 31.0237L21.5728 21.7928L29.302 -0.00499268Z" fill="black"/>
-              </svg>
-            </li>
-            <li class="item">
-              <h2 class="title">Shorts</h2>
-            </li>	
-            <li class="item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
-              <path opacity="0.3" d="M29.302 -0.00499268L38.533 21.2005L60.3307 28.9297L39.1253 38.1607L31.396 59.9585L22.165 38.753L0.367297 31.0237L21.5728 21.7928L29.302 -0.00499268Z" fill="black"/>
-              </svg>
-            </li>
-              <li class="item">
-              <h2 class="title">t-shirt</h2>
-            </li>	
-            <li class="item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
-              <path opacity="0.3" d="M29.302 -0.00499268L38.533 21.2005L60.3307 28.9297L39.1253 38.1607L31.396 59.9585L22.165 38.753L0.367297 31.0237L21.5728 21.7928L29.302 -0.00499268Z" fill="black"/>
-              </svg>
-            </li>
-            <li class="item">
-              <h2 class="title">Blazer</h2>
-            </li>	
-            <li class="item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
-              <path opacity="0.3" d="M29.302 -0.00499268L38.533 21.2005L60.3307 28.9297L39.1253 38.1607L31.396 59.9585L22.165 38.753L0.367297 31.0237L21.5728 21.7928L29.302 -0.00499268Z" fill="black"/>
-              </svg>
-            </li>
-            <li class="item">
-              <h2 class="title">Jacket</h2>
-            </li>	
-            <li class="item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
-              <path opacity="0.3" d="M29.302 -0.00499268L38.533 21.2005L60.3307 28.9297L39.1253 38.1607L31.396 59.9585L22.165 38.753L0.367297 31.0237L21.5728 21.7928L29.302 -0.00499268Z" fill="black"/>
-              </svg>
-            </li>
-            <li class="item">
-              <h2 class="title">Jeans</h2>
-            </li>	
-            <li class="item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
-              <path opacity="0.3" d="M29.302 -0.00499268L38.533 21.2005L60.3307 28.9297L39.1253 38.1607L31.396 59.9585L22.165 38.753L0.367297 31.0237L21.5728 21.7928L29.302 -0.00499268Z" fill="black"/>
-              </svg>
-            </li>
-            <li class="item">
-              <h2 class="title">Shirts</h2>
-            </li>	
-            <li class="item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
-              <path opacity="0.3" d="M29.302 -0.00499268L38.533 21.2005L60.3307 28.9297L39.1253 38.1607L31.396 59.9585L22.165 38.753L0.367297 31.0237L21.5728 21.7928L29.302 -0.00499268Z" fill="black"/>
-              </svg>
-            </li>
-            <li class="item">
-              <h2 class="title">Shorts</h2>
-            </li>	
-            <li class="item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
-              <path opacity="0.3" d="M29.302 -0.00499268L38.533 21.2005L60.3307 28.9297L39.1253 38.1607L31.396 59.9585L22.165 38.753L0.367297 31.0237L21.5728 21.7928L29.302 -0.00499268Z" fill="black"/>
-              </svg>
-            </li>
-          </ul>
-        </div>
-      </section> -->
-      <!-- Dz Silder End -->
+     
       
       <!-- Products Section Start -->
       <section class="content-inner">
@@ -518,7 +377,7 @@
       
     
       <!-- Blockbuster deal Start -->
-      <section class="content-inner-2 overflow-hidden">
+     <!--  <section class="content-inner-2 overflow-hidden">
         <div class="container">
           <div class="section-head style-1 wow fadeInUp d-lg-flex justify-content-between" data-wow-delay="0.2s">
             <div class="left-content">
@@ -618,7 +477,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- Blockbuster deal Start -->
     
       

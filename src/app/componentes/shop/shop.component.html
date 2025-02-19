@@ -37,7 +37,7 @@
                                 <div class="widget widget_search">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input name="dzSearch" required="required" type="search" class="form-control" placeholder="Search Product">
+                                            <input name="dzSearch" required="required" type="search" class="form-control" placeholder="Buscar producto">
                                             <div class="input-group-addon">
                                                 <button name="submit" value="Submit" type="submit" class="btn">
                                                     <i class="icon feather icon-search"></i>
@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="widget">
+                                <!-- <div class="widget">
                                     <h6 class="widget-title">Price</h6>
                                     <div class="price-slide range-slider">
                                         <div class="price">
@@ -134,7 +134,7 @@
                                         <input type="radio" class="btn-check" name="btnradio1" id="btnradiol09">
                                         <label class="btn" for="btnradiol09">20</label>
                                     </div>
-                                </div>
+                                </div> -->
                                 
                                 <div class="widget widget_categories">
                                     <h6 class="widget-title">Categoria</h6>
@@ -143,7 +143,7 @@
                                     </ul>
                                 </div>
                                 
-                                <div class="widget widget_tag_cloud">
+                                <!-- <div class="widget widget_tag_cloud">
                                     <h6 class="widget-title">Tags</h6>
                                     <div class="tagcloud"> 
                                         <a href="blog-tag.html">Vintage </a>
@@ -155,9 +155,9 @@
                                         <a href="blog-tag.html">Business Meeting</a>
                                         <a href="blog-tag.html">Formal</a>
                                     </div>
-                                </div>
-                                <a href="javascript:void(0);" class="btn btn-sm font-14 btn-secondary btn-sharp">RESET</a>
-                            </aside>
+                                </div> -->
+<!--                                 <a href="javascript:void(0);" class="btn btn-sm font-14 btn-secondary btn-sharp">RESET</a>
+ -->                            </aside>
                         </div>
                     </div>
                 </div>
@@ -237,7 +237,7 @@
                         <div class="col-12 tab-content shop-" id="pills-tabContent">
                             <div class="tab-pane fade " id="tab-list-list" role="tabpanel" aria-labelledby="tab-list-list-btn">
                                 <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xxxl-6" *ngFor="let producto of (realtimeproductos.productos$ | async); let i = index">
+                                    <div class="col-md-12 col-sm-12 col-xxxl-12" *ngFor="let producto of (realtimeproductos.productos$ | async); let i = index">
                                         <div class="dz-shop-card style-2">
                                             <div class="dz-media">
                                                 <img src="{{producto.files[0]}}" alt="image">
@@ -312,7 +312,7 @@
                                             <div class="dz-media">
                                                 <img src="{{producto.files[0]}}" alt="image">
                                         <div class="shop-meta">
-                                                    <a href="javascript:void(0);" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                    <a href="javascript:void(0);" (click) ="global.setProduct('detail-product',producto)" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                         <i class="fa-solid fa-eye d-md-none d-block"></i>
                                                         <span class="d-md-block d-none">Ver producto</span>
                                                     </a>
@@ -345,7 +345,7 @@
                                             <div class="dz-media">
                                                 <img src="{{producto.files[0]}}" alt="image">
                                                 <div class="shop-meta">
-                                                    <a href="javascript:void(0);" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                    <a href="javascript:void(0);"  (click) ="global.setProduct('detail-product',producto)" class="btn btn-secondary btn-md btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                         <i class="fa-solid fa-eye d-md-none d-block"></i>
                                                         <span class="d-md-block d-none">Ver producto</span>
                                                     </a>
@@ -364,7 +364,7 @@
                                                 </div>							
                                             </div>
                                             <div class="dz-content">
-                                                <h5 class="title"><a (click)="global.setRoute('detail-product')" style="cursor: pointer;">{{producto.name}}</a></h5>
+                                                <h5 class="title"><a (click)="global.setProduct('detail-product',producto)" style="cursor: pointer;">{{producto.name}}</a></h5>
                                                 <h5 class="price">$ {{producto.price}}</h5>
                                             </div>
                                             <div class="product-tag">

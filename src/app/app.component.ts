@@ -17,6 +17,13 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RegisterComponent } from './componentes/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import Swiper from 'swiper';
+import { CarComponent } from './componentes/car/car.component';
+import { CheckoutComponent } from './componentes/checkout/checkout.component';
+import { CarService } from './services/car.service';
+import { ProductsService } from './services/products.service';
+import Swal from 'sweetalert2';
+import { FormsModule } from '@angular/forms';
+ 
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -33,7 +40,10 @@ import Swiper from 'swiper';
     ContactComponent,
     AboutComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CarComponent,
+    CheckoutComponent,
+    FormsModule
   
   ],
   templateUrl: './app.component.html',
@@ -41,11 +51,14 @@ import Swiper from 'swiper';
 })
 export class AppComponent implements AfterViewInit {
   title = 'alicompras';
-  
+  product: any; // Asegúrate de definir el tipo de tu producto
+  quantity: number = 1; // Cantidad por defecto
   constructor (
     public global: GlobalService,
     private scriptLoader: ScriptLoaderService,
     private scriptStore: ScriptStoreService,
+    public carService: CarService,
+    public productService: ProductsService,
     @Inject(PLATFORM_ID) private platformId: Object
   )
     {}
@@ -79,40 +92,7 @@ export class AppComponent implements AfterViewInit {
       })
       .catch((error) => console.error('Error al cargar los scripts', error));
   }
-     /*  ngOnInit(): void {
-        if (typeof document !== 'undefined') {
-            this.scriptLoader
-            .loadScripts([
-                'assets/js/jquery.min.js',
-                'assets/vendor/wow/wow.min.js',
-                'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js',
-                'assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
-                'assets/vendor/bootstrap-touchspin/bootstrap-touchspin.js',
-                'assets/vendor/swiper/swiper-bundle.min.js',
-                'assets/vendor/magnific-popup/magnific-popup.js',
-                'assets/vendor/imagesloaded/imagesloaded.js',
-                'assets/vendor/masonry/masonry-4.2.2.js',
-                'assets/vendor/masonry/isotope.pkgd.min.js',
-                'assets/vendor/countdown/jquery.countdown.js',
-                'assets/vendor/wnumb/wNumb.js',
-                'assets/vendor/nouislider/nouislider.min.js',
-                'assets/vendor/slick/slick.min.js',
-                'assets/vendor/lightgallery/dist/lightgallery.min.js',
-                'assets/vendor/lightgallery/dist/plugins/thumbnail/lg-thumbnail.min.js',
-                'assets/vendor/lightgallery/dist/plugins/zoom/lg-zoom.min.js',
-                'assets/js/dz.carousel.js',
-                'assets/js/dz.ajax.js',
-                'assets/js/custom.min.js',
-                'assets/js/dashbord-account.js'
-            ])
-            .then((data) => {
-                console.log('Todos los scripts se han cargado correctamente', data);
-            })
-            .catch((error) => console.error('Error al cargar los scripts', error));
-        } else {
-            console.warn('Document no está disponible en este entorno.');
-        }
-    } */
+    
     ngAfterViewInit(): void {
       if (isPlatformBrowser(this.platformId)) {
           // Inicializa Swiper aquí
@@ -132,6 +112,41 @@ export class AppComponent implements AfterViewInit {
     isImage(image: string): boolean {
       return /\.(jpg|jpeg|png|gif|bmp|webp)$/i.test(image);
     }
-
+   /*  addToCart() {
+      // Agregar el producto al carrito
+      this.carService.addProduct(this.product, this.quantity);
+    
+      // Reiniciar la cantidad
+      this.quantity = 1;
+    
+      // Mostrar un alert con SweetAlert2
+      Swal.fire({
+        icon: 'success',
+        title: 'Producto agregado al carrito',
+        text: `¡El producto ${this.product.name} ha sido agregado al carrito!`,
+        showConfirmButton: true,
+        timer: 2000 // Se cerrará automáticamente después de 2 segundos
+      });
+    } */
+    addToCart() {
+      if (this.product) { // Verifica que el producto esté definido
+        // Agregar el producto al carrito
+        this.carService.addProduct(this.product, this.quantity);
+    
+        // Reiniciar la cantidad
+        this.quantity = 1;
+    
+        // Mostrar un alert con SweetAlert2
+        Swal.fire({
+          icon: 'success',
+          title: 'Producto agregado al carrito',
+          text: `¡El producto ${this.product.name} ha sido agregado al carrito!`,
+          showConfirmButton: true,
+          timer: 2000 // Se cerrará automáticamente después de 2 segundos
+        });
+      } else {
+        console.error('El producto no está definido');
+      }
+    }
 
   }

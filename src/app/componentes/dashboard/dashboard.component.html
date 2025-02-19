@@ -8,7 +8,7 @@
                 <nav aria-label="breadcrumb" class="breadcrumb-row">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a (click)="global.setRoute('home')" style="cursor: pointer;"> Inicio</a></li>
-                        <li class="breadcrumb-item">Dashboard</li>
+                        <li class="breadcrumb-item"> Dashboard</li>
                     </ul>
                 </nav>
             </div>
@@ -18,7 +18,7 @@
     
     <div class="content-inner-1">
         <div class="container">
-            <div class="row">
+            <div class="row"> 
                 <aside class="col-xl-3">
                     <div class="toggle-info">
                         <h5 class="title mb-0">Menu</h5>
@@ -34,23 +34,23 @@
                                 <span class="text text-primary">info {{authService.getCurrentUser()?.email}}</span>
                             </div>
                             <div class="account-nav">
-                                <div class="nav-title bg-light" (click)="global.setRoute('dashboard')">DASHBOARD</div>
+                                <div class="nav-title bg-light" style="cursor:pointer;" (click)="global.setMenuOption('dashboard')">DASHBOARD</div>
                                 <ul>
                                     <li><a (click)="global.setRoute('shop')" style="cursor: pointer;">Productos</a></li>
-                                    <li><a (click)="toggleProducts()" style="cursor: pointer;">Agregar Producto</a></li>
-                                    <li><a  style="cursor: pointer;">Ordenes</a></li>
+                                    <li><a (click)="global.setMenuOption('add-product')" style="cursor: pointer;">Agregar Producto</a></li>
+                                    <li><a (click)="global.setMenuOption('orders')" style="cursor: pointer;">Ordenes</a></li>
                                 </ul>
                                 <div class="nav-title bg-light">Ajustes</div>
                                 <ul class="account-info-list">
-                                    <li><a  (click)="toggleCategories()" style="cursor: pointer;">  Categorias <span>{{global.categorias.length}}</span> </a> </li>
+                                    <li><a (click)="global.setMenuOption('categories')" style="cursor: pointer;">  Categorias <span>{{global.categorias.length}}</span> </a> </li>
                                     
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </aside>
-                <section class="col-xl-9 account-wrapper">
-                    <div class="account-card"  *ngIf="!showProducts && !showCategories">
+                <section class="col-xl-9 account-wrapper" >
+                    <div class="account-card"  [hidden]="global.menuSelected !== 'dashboard'">
                         <div class="m-b30">
                             <p>Hola, bienvenido a tu Dashboard de <strong class="text-black">Alicompras</strong> </p>
                         </div>
@@ -108,7 +108,7 @@
                             </div>
                         </div>
                     </div> 
-                    <div class="account-card" id="category" *ngIf="showCategories && !showProducts" >
+                    <div class="account-card" id="category" [hidden]="global.menuSelected !== 'categories'"   >
                         <div class="table-responsive table-style-1">
                             <table class="table table-hover mb-3">
                                 <thead>
@@ -129,11 +129,11 @@
                             </table>
                         </div>
                     </div>
-                    <div class="account-card" id="product" *ngIf="showProducts">
+                    <div class="account-card" id="product" [hidden]="global.menuSelected !== 'add-product'">
                         
                         <form class="row" (ngSubmit)="onSubmit()">
                             <div class="profile-edit">
-                                <div class="avatar-upload d-flex align-items-center">
+                                <!-- <div class="avatar-upload d-flex align-items-center">
                                     <div class=" position-relative ">
                                         <div class="avatar-preview thumb">
                                             <div id="imagePreview" style="background-image: url(images/profile3.jpg);"></div>
@@ -143,12 +143,27 @@
                                             <label for="imageUpload" class="btn btn-light ms-0"><i class="fa-solid fa-camera"></i></label>
                                         </div>	
                                     </div>
+                                </div> -->
+                                <div class="clearfix">
+                                  <!-- <h2 class="title mb-0">Imágenes</h2> -->
+                                  <span class="text text-primary"></span>
                                 </div>
                                 <div class="clearfix">
-                                    <h2 class="title mb-0">imagenes</h2><span class="text text-primary"></span>
-                                    
+                                  <div class="custom-file-upload">
+                                    <div *ngIf="selectedImage" class="image-preview">
+                                      <img [src]="selectedImagePrev" alt="Selected Image" class="img-thumbnail"
+                                           style="border-radius: 50%; cursor: pointer; border: 5px solid #3ba5a8; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); transition: box-shadow 0.3s ease, transform 0.3s ease; max-width: 150px; max-height: 150px;" />
+                                    </div>
+                                    <input #imageUpload id="imageUpload" type="file" (change)="onImageChange($event)" class="form-control"
+                                           accept="image/*" style="display: none;" />
+                                    <label for="imageUpload" class="btn mb-2 me-2 btn-primary">
+                                      <i class="fa-solid fa-search me-2"></i>Imágen de producto
+                                    </label>
+                                    <div *ngIf="!selectedImage" class="text-danger">* Por favor, suba una imagen.</div>
+                                  </div>
                                 </div>
                             </div>
+                            
                             <div class="col-lg-4">
                                 <div class="form-group m-b25">
                                     <label class="label-title">Nombre del producto</label>
@@ -182,8 +197,8 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                <button class="btn btn-primary mt-3 mt-sm-0" type="submit">Guardar</button>
-                                <button class="btn btn-outline-primary mt-3 mt-sm-0" type="reset">Cancelar</button>
+                                <button class="btn btn-success mt-3 mt-sm-0" type="submit">Guardar</button>
+                                <button class="btn btn-outline-success mt-3 mt-sm-0" type="reset">Cancelar</button>
                             </div>
                         </form> 
                     </div>

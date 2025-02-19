@@ -13,7 +13,7 @@ export class RealtimeProductosService implements OnDestroy {
     this.productosSubject.asObservable();
 
   constructor() {
-    this.pb = new PocketBase('https://db.buckapi.com:8050');
+    this.pb = new PocketBase('https://db.buckapi.lat:8050');
     this.subscribeToProductos();
   }
 

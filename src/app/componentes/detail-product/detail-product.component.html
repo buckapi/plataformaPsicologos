@@ -3,7 +3,7 @@
     <div class="d-sm-flex justify-content-between container-fluid py-3">
         <nav aria-label="breadcrumb" class="breadcrumb-row">
             <ul class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a (click)="global.setRoute('home')"> Inicio</a></li>
+                <li class="breadcrumb-item"><a (click)="global.setRoute('shop')"> Tienda</a></li>
                 <li class="breadcrumb-item">Detalle del Producto</li>
             </ul>
         </nav>
@@ -109,23 +109,11 @@
                             <div class="product-num gap-md-2 gap-xl-0">
                                 <div class="btn-quantity light">
                                     <label class="form-label">Cantidad</label>
-                                    <input  type="text" value="1" name="demo_vertical2">
+                                    <input  type="number" value="1" name="demo_vertical2" [(ngModel)]="quantity" min="1" >
                                 </div>
-                                <!-- <div class="d-block">
-                                    <label class="form-label">Size</label>
-                                    <div class="btn-group product-size m-0">
-                                        <input type="radio" class="btn-check" name="btnradio1" id="btnradio101" checked="">
-                                        <label class="btn" for="btnradio101">S</label>
-
-                                        <input type="radio" class="btn-check" name="btnradio1" id="btnradiol02">
-                                        <label class="btn" for="btnradiol02">M</label>
-
-                                        <input type="radio" class="btn-check" name="btnradio1" id="btnradiol03">
-                                        <label class="btn" for="btnradiol03">L</label>
-                                    </div>
-                                </div> -->
+                                
                                
-                                <!-- <div class="meta-content">
+                                <div class="meta-content">
                                     <label class="form-label">Color</label>
                                     <div class="d-flex align-items-center color-filter">
                                         <div class="form-check">
@@ -145,14 +133,10 @@
                                             <span></span>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                             <div class="btn-group cart-btn">
-                                <a  class="btn btn-secondary text-uppercase">Agregar al Carrito</a>
-                                <!-- <a href="shop-wishlist.html" class="btn btn-outline-secondary btn-icon">
-                                    <i class="icon feather icon-heart"></i>
-                                    Add To Wishlist
-                                </a> -->
+                                <a  class="btn btn-secondary text-uppercase" (click)="addToCart()">Agregar al Carrito</a>
                             </div>
                             <div class="dz-info">
                                 <ul>
@@ -161,11 +145,11 @@
                                 </ul>
                                 <ul>
                                     <li><strong>Categoria:</strong></li>
-                                    <li><a href="shop-standard.html">Dresses,</a></li>												
-                                    <li><a href="shop-standard.html">Jeans,</a></li>												
-                                    <li><a href="shop-standard.html">Swimwear,</a></li>												
-                                    <li><a href="shop-standard.html">Summer,</a></li>												
-                                    <li><a href="shop-standard.html">Clothing,</a></li>												
+                                    <li><a >Dresses,</a></li>												
+                                    <li><a >Jeans,</a></li>												
+                                    <li><a >Swimwear,</a></li>												
+                                    <li><a >Summer,</a></li>												
+                                    <li><a >Clothing,</a></li>												
                                 </ul>
                                 <!-- <ul>
                                     <li><strong>Tags:</strong></li>
@@ -254,24 +238,22 @@
                             <div class="row">
                                 <div class="col-lg-6 m-lg-b0 m-md-b30">
                                     <div class="section-head style-2 d-block">
-                                        <h2 class="title">Fits women</h2>
+                                        <h2 class="title">Descripcion del producto</h2>
                                         <p>Designed for superior child comfort, OneFit™ provides extra rear-facing legroom and multiple recline options in every mode of use. With the widest range of height adjustments, the easy-adjust headrest system adjusts with the harness to grow with your child. OneFit™ accommodates tiny passengers from the very start with a removable head and body support insert for newborns weighing 5-11 lbs.		</p>
                                     </div>
                                     <div class="product-specification">
-                                        <h4 class="specification-title">Specifications</h4>
+                                        <h4 class="specification-title">Especificaciones</h4>
                                         <ul>
-                                            <li>Assembled Dimensions (L x W x H): <span>71.1 x 45.7 x 7.6 cm; 700 Grams</span></li>
-                                            <li>Assembled Product Weight: <span>25 lbs.</span></li>
+                                            <li>Dimensiones (L x A x A): <span>71.1 x 45.7 x 7.6 cm; 700 Grams</span></li>
+                                            <li>Peso: <span>25 lbs.</span></li>
                                         </ul>
                                     </div>
                                     <ul class="specification-list m-b40">
-                                        <li class="list-info">Manufacturer <span>Indra Hosiery Mills</span></li>
-                                        <li class="list-info">ASIN<span>B07WK128569</span></li>
-                                        <li class="list-info">Country of Origin<span>India</span></li>
-                                        <li class="list-info">Department<span>Women</span></li>
-                                        <li class="list-info">Included Components<span>Women's Jacket</span></li>
-                                        <li class="list-info">Item Dimensions LxWxH<span> 71.1 x 45.7 x 7.6 Centimeters</span></li>
-                                        <li class="list-info">Manufacture<span> Indra Hosiery Mills</span></li>
+                                        <li class="list-info">Fabricante <span>Indra Hosiery Mills</span></li>
+                                        <li class="list-info">Codigo de producto<span>B07WK128569</span></li>
+                                        <li class="list-info">Pais de origen<span>India</span></li>
+                                        <li class="list-info">Material<span>Women</span></li>
+                                        <li class="list-info">Categoria<span>Women</span></li>
                                     </ul>
                                     <!-- <div class="product-media row g-xl-4 g-2 m-b40">
                                         <div class="col-md-3 col-3 col-sm-3 product-media-inner">
@@ -295,7 +277,7 @@
                                             </a>
                                         </div>
                                     </div> -->
-                                    <div class="product-info">
+                                    <!-- <div class="product-info">
                                         <div class="product-info-inner">
                                             <h4 class="info-title">Fabric Content</h4>
                                             <ul class="d-lg-flex d-block align-items-center">
@@ -307,40 +289,40 @@
                                             <h4 class="info-title">Chemical Statement</h4>
                                             <p class="info-text">The OneFit ClearTex All-In-One Car Seat is produced without the use of intentionally added fire retardant chemical treatments, PFAS, BPA and phthalates.	</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 m-sm-b20 m-b30">
-                                            <a href="shop-standard.html" class="about-product-wrapper">
+                                            <a  class="about-product-wrapper">
                                                 <div class="producṭ-content bg-light">
-                                                    <h4 class="product-title">All-in-One Dress</h4>
-                                                    <p class="product-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                                </div>
+                                                    <h4 class="product-title">Producto original</h4>
+<!--                                                     <p class="product-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+ -->                                                </div>
                                             </a>
                                         </div>
                                         <div class="col-lg-6 col-md-6 m-sm-b20 m-b30">
-                                            <a href="shop-standard.html" class="about-product-wrapper">
+                                            <a  class="about-product-wrapper">
                                                 <div class="producṭ-content bg-light">
-                                                    <h4 class="product-title">Looking wise good</h4>
-                                                    <p class="product-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                                </div>
+                                                    <h4 class="product-title">Producto Garantizado</h4>
+<!--                                                     <p class="product-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+ -->                                                </div>
                                             </a>
                                         </div>
                                         <div class="col-lg-6 col-md-6 m-sm-b20 m-b30">
-                                            <a href="shop-standard.html" class="about-product-wrapper">
+                                            <a  class="about-product-wrapper">
                                                 <div class="producṭ-content bg-light">
-                                                    <h4 class="product-title">100% Made In India</h4>
-                                                    <p class="product-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                                </div>
+                                                    <h4 class="product-title">100% Hecho en </h4>
+<!--                                                     <p class="product-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+ -->                                                </div>
                                             </a>
                                         </div>
                                         <div class="col-lg-6 col-md-6 m-sm-b20 m-b30">
-                                            <a href="shop-standard.html" class="about-product-wrapper">
+                                            <a  class="about-product-wrapper">
                                                 <div class="producṭ-content bg-light">
-                                                    <h4 class="product-title">100% Cotton</h4>
-                                                    <p class="product-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                                </div>
+                                                    <h4 class="product-title">Producto importado</h4>
+<!--                                                     <p class="product-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+ -->                                                </div>
                                             </a>
                                         </div>
                                     </div>
