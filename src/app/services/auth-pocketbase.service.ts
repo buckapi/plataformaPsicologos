@@ -12,7 +12,8 @@ export class AuthPocketbaseService {
   complete: boolean = false;
   private userTypeSubject = new BehaviorSubject<string | null>(this.getUserTypeFromStorage());
   userType$ = this.userTypeSubject.asObservable();
-  
+  private hasCheckedLoginStatus = false;
+
   constructor( 
     @Inject(PLATFORM_ID) private platformId: Object,
     public global: GlobalService
@@ -64,7 +65,7 @@ export class AuthPocketbaseService {
       }
       this.userTypeSubject.next(null);
     }
-isLogin() {
+/* isLogin() {
     console.log('Checking login status...');
     if (isPlatformBrowser(this.platformId)) {
         const status = localStorage.getItem('isLoggedin');
@@ -74,7 +75,23 @@ isLogin() {
         console.error('localStorage is not available.');
         return null;
     }
-}
+} */
+    isLogin() {
+      if (!this.hasCheckedLoginStatus) {
+          console.log('Checking login status...');
+          if (isPlatformBrowser(this.platformId)) {
+              const status = localStorage.getItem('isLoggedin');
+              console.log(`Login status: ${status}`);
+              this.hasCheckedLoginStatus = true; // Marcar que ya se ha verificado
+              return status;
+          } else {
+              console.error('localStorage is not available.');
+              return null;
+          }
+      }
+      // Si ya se ha verificado, simplemente devuelve el estado actual
+      return localStorage.getItem('isLoggedin');
+  }
   isAdmin() {
     const userType = localStorage.getItem('type');
     return userType === '"admin"';
@@ -83,6 +100,12 @@ isLogin() {
   isCustomer() {
     const userType = localStorage.getItem('type');
     return userType === '"cliente"';
+  }
+  checkLoginStatus() {
+    if (!this.hasCheckedLoginStatus) {
+        this.hasCheckedLoginStatus = true;
+        // Check login status logic here
+    }
   }
 
   registerUser(email: string, password: string, type: string, name: string, username: string, company: string

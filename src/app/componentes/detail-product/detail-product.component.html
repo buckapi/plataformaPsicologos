@@ -111,9 +111,7 @@
                                     <label class="form-label">Cantidad</label>
                                     <input  type="number" value="1" name="demo_vertical2" [(ngModel)]="quantity" min="1" >
                                 </div>
-                                
-                               
-                                <div class="meta-content">
+                                <!-- <div class="meta-content">
                                     <label class="form-label">Color</label>
                                     <div class="d-flex align-items-center color-filter">
                                         <div class="form-check">
@@ -133,10 +131,10 @@
                                             <span></span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="btn-group cart-btn">
-                                <a  class="btn btn-secondary text-uppercase" (click)="addToCart()">Agregar al Carrito</a>
+                                <a class="btn btn-secondary text-uppercase" (click)="addToCart(product)">Agregar al Carrito</a>
                             </div>
                             <div class="dz-info">
                                 <ul>
@@ -443,7 +441,7 @@
                     <i class="icon feather icon-chevron-right font-18"></i>
                 </a>			
             </div>
-            <div class="swiper-btn-center-lr">
+           <!--  <div class="swiper-btn-center-lr">
                 <div class="swiper swiper-four">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -596,7 +594,7 @@
                         <i class="flaticon flaticon-chevron"></i>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 </div>

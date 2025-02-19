@@ -32633,11 +32633,12 @@ body .working-location {
         border-radius: 50%;
         animation: 2s ease 0s infinite normal none running pointZoom; }
       .contact-us2 .map-fixed .map-point .point.point-1 {
-        left: 13%;
-        top: 20%; }
+        left: 22%;
+        top: 50%;
+        }
       .contact-us2 .map-fixed .map-point .point.point-2 {
-        left: 60%;
-        top: 15%; }
+        left: 19%;
+        top: 51%; }
       .contact-us2 .map-fixed .map-point .point.point-3 {
         left: 50%;
         top: 50%; }

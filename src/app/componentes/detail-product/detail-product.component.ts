@@ -29,15 +29,14 @@ export class DetailProductComponent implements AfterViewInit {
   }
   product: any; // Asegúrate de definir el tipo de tu producto
   quantity: number = 1; // Cantidad por defecto
-
+  cartQuantity: number = 0;
+  selectedProduct: any;
 constructor(
   public global: GlobalService,
   public carService: CarService
 ) {}
-/* addToCart() {
-  this.carService.addProduct(this.product, this.quantity);
-} */
-  addToCart() {
+
+ /*  addToCart() {
     this.carService.addProduct(this.product, this.quantity);
     this.quantity = 1;
     
@@ -48,16 +47,91 @@ constructor(
       showConfirmButton: true,
       timer: 2000 
     });
-  }
-  /* addToCart() {
-    // Agregar el producto al carrito
-    this.carService.addProduct(this.product, this.quantity);
-  
-    // Reiniciar la cantidad
-    this.quantity = 1;
-  
-    // Mostrar un mensaje usando el alert estándar del navegador
-    alert(`¡El producto ${this.product.name} ha sido agregado al carrito!`);
   } */
+ // In detail-product.component.ts
+
+// Update the addToCart method
+/* addToCart(product: any) {
+  if (!this.global.cart) {
+    this.global.cart = [];
+  }
+
+  // Agregar producto al carrito
+  const existingProduct = this.global.cart.find(item => item.id === product.id);
+  if (existingProduct) {
+    existingProduct.quantity += 1; // Incrementar la cantidad si ya existe
+  } else {
+    this.global.cart.push({ ...product, quantity: 1 }); // Agregar nuevo producto
+  }
+
+  // Guardar en localStorage
+  this.global.saveCartToLocalStorage();
+}
+
+// Update the selectService method (renamed to selectProduct)
+async selectProduct(product: any) {
+  this.selectedProduct = product; // Seleccionar el producto
+} */
+  addToCart(product: any) {
+    console.log('Product being added to cart:', product); // Log the product
+  
+    if (!product) {
+      console.error('No product found!'); // Log an error if product is undefined
+      return; // Exit the function if product is not defined
+    }
+  
+    if (!this.global.cart) {
+      this.global.cart = [];
+    }
+  
+    // Agregar producto al carrito
+    const existingProduct = this.global.cart.find(item => item.id === product.id);
+    if (existingProduct) {
+      existingProduct.quantity += 1; // Incrementar la cantidad si ya existe
+    } else {
+      this.global.cart.push({ ...product, quantity: 1 }); // Agregar nuevo producto
+    }
+  
+    // Guardar en localStorage
+    this.global.saveCartToLocalStorage();
+  }
+
+// Ensure cart is loaded from localStorage in ngOnInit
+/* ngOnInit() {
+  this.global.cartQuantity$.subscribe(quantity => {
+    this.global.cartQuantity = quantity;
+    this.global.updateCartQuantity(); 
+  });
+
+  this.device.isMobile().subscribe(isMobile => {
+    this.isMobile = isMobile;
+  });
+
+  this.global.clinicComments$.subscribe(comments => {
+    console.log('Received new comments:', comments);
+    this.comments = comments;
+    this.cdr.detectChanges();
+  });
+
+  // Cargar el carrito desde localStorage si existe
+  const savedCart = localStorage.getItem('cart');
+  if (savedCart) {
+    this.global.cart = JSON.parse(savedCart);
+  }
+} */
+
+  ngOnInit() {
+    this.global.cartQuantity$.subscribe(quantity => {
+        this.global.cartQuantity = quantity;
+        this.global.updateCartQuantity(); 
+    });
+
+    // Example: Fetch the product from a service or route parameter
+    /* this.route.params.subscribe(params => {
+        const productId = params['id']; // Assuming you're using route parameters
+        this.selectedProduct = this.productService.getProductById(productId); // Replace with actual service call
+        console.log('Selected product:', this.selectedProduct); // Log the selected product
+    }); */
+}
   
 }

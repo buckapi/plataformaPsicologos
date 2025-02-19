@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs'; // Add this line
 
 interface Producto {
   id: number;
@@ -19,7 +20,12 @@ export class GlobalService {
   categorias: any[] = [];
   productos: any[] = [];
   totalProductos = 0;
-  
+  cart: any[] = [];
+  cartQuantity = 0;
+  cartQuantity$ = new BehaviorSubject<number>(0); 
+  cartStatus$ = new BehaviorSubject<boolean>(false);
+
+
   constructor() { }
   setRoute(route: string) {
     this.activeRoute = route;
@@ -48,4 +54,17 @@ export class GlobalService {
   getProductDetails(): Producto {
     return this.previaProducto;
   }
+  public updateCartQuantity() {
+    const totalItems = this.cart.length; // Cantidad de ítems únicos en el carrito
+    this.cartQuantity$.next(totalItems);
+  }
+
+  public saveCartToLocalStorage() {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+      this.cart = JSON.parse(savedCart);
+      this.cartStatus$.next(this.cart.length > 0); // Emitir estado inicial
+    }
+  }
+
 }
